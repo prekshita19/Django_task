@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat Squad</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="frame">
+      <h1>Chat Squad</h1>
+      <form action="checkview" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="room_name">Room Name:</label>
+          <input type="text" id="room_name" name="room_name" required>
+        </div>
+
+        <input type="submit" value="Go Live"></input>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
